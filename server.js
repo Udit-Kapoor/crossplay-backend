@@ -10,10 +10,7 @@ require('dotenv').config();
 const app = express();
 app.use(morgan('dev'));
 app.use(express.json());
-app.use(cors({
-    origin: '*',
-    methods: ['GET', 'POST'],
-}));
+app.use(cors());
 
 app.get('/', (req, res) => {
     res.send('Server started successfully');
