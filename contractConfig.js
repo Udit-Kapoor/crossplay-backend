@@ -32,11 +32,16 @@ const CONFIG = {
     PROVIDER: `https://sepolia.base.org`,
     CHAIN_ID: 84532,
   },
-//   XDC: {
-//     ADDRESS: "0xaa1732dd78d1acad0379c4d9a1747ab34beaf8c2",
-//     PROVIDER: `https://rpc.apothem.network`,
-//     CHAIN_ID: `51`,
-//   },
+  OKX: {
+    ADDRESS: "0xaa1732dd78d1acad0379c4d9a1747ab34beaf8c2",
+    PROVIDER: `https://x1testrpc.okx.com/`,
+    CHAIN_ID: 195,
+  },
+  //   XDC: {
+  //     ADDRESS: "0xaa1732dd78d1acad0379c4d9a1747ab34beaf8c2",
+  //     PROVIDER: `https://rpc.apothem.network`,
+  //     CHAIN_ID: `51`,
+  //   },
 };
 
 const ABI = [
