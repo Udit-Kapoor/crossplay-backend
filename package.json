@@ -10,6 +10,7 @@
   "author": "pichkari & gamma",
   "license": "ISC",
   "dependencies": {
+    "@huddle01/server-sdk": "^1.0.0-alpha.25",
     "@taquito/signer": "^13.0.1",
     "@taquito/taquito": "^13.0.1",
     "@taquito/utils": "^13.0.1",

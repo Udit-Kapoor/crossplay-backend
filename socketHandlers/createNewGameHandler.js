@@ -2,6 +2,7 @@ const serverStore = require("../serverStore");
 const User = require("../models/userModel");
 const Game = require('../models/gameModel');
 const colors = require('colors');
+const {createHuddleRoom}  = require('../connections/huddle');
 
 const createNewGameHandler = async (socket, data, next) => {
     /* 
@@ -37,6 +38,15 @@ const createNewGameHandler = async (socket, data, next) => {
         console.log(`Game already exists in database - ${gameId}`.red.inverse);
         return;
     }
+    let huddleId = "";
+    try {
+        //huddle block
+
+        const res = await createHuddleRoom(wallet);
+        huddleId = res.data.roomId;
+    } catch (error) {
+        console.log(error);
+    }
 
     // 1) Make a new game
     const newGame = await Game.create({
@@ -46,6 +56,7 @@ const createNewGameHandler = async (socket, data, next) => {
       tokenData: data.obj,
       me: wallet,
       meChain: meChain,
+      huddleRoomId: huddleId,
     });
 
     if (!newGame) {

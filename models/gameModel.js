@@ -12,7 +12,7 @@ const gameSchema = new mongoose.Schema(
       betTokenType: { type: String, required: true },
       betTokenName: { type: String, required: true },
     },
-
+    huddleRoomId: { type: String, default: "" },
     // assign when game starts
     me: { type: String, required: true },
     meChain: { type: String, required: true },
@@ -35,7 +35,7 @@ const gameSchema = new mongoose.Schema(
 
     // winner details for this game
     winner: { type: String }, // wallet id of winner
-    winnerChain: { type: String},
+    winnerChain: { type: String },
     winnerNft: { type: String }, // nft address of winner
   },
   { timestamps: true },

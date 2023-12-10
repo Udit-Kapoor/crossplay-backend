@@ -17,7 +17,7 @@ const refundGameHandler = require("./socketHandlers/refundGameHandler");
 const registerSocketServer = (server) => {
     const io = require('socket.io')(server, {
         cors: {
-            origin: '*',
+            origin: '',
             methods: ['GET', 'POST'],
         },
     });
