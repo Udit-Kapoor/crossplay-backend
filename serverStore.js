@@ -32,16 +32,16 @@ const getMySocket = (wallet) => {
   }
 }
 
-const addNewGame = (gameId, isPublic, socket, alias, tokenData) => {
+const addNewGame = (gameId, isPublic, socket, alias, tokenData ,huddleRoomId) => {
   // 1) Check if game is already added as it could be an old game and a multiple socket connection request
   if (gamesAvailable.has(gameId)) {
     return false;
   }
 
   if (isPublic) {
-    publicGames.push({ gameId, alias, tokenData });
+    publicGames.push({ gameId, alias, tokenData, huddleRoomId });
   } else {
-    privateGames.push({ gameId, alias, tokenData });
+    privateGames.push({ gameId, alias, tokenData, huddleRoomId });
   }
   console.log(publicGames);
   connectedUsers.set(socket.wallet, { ...connectedUsers.get(socket.wallet), game: gameId });

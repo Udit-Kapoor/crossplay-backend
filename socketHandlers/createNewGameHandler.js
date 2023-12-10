@@ -68,7 +68,7 @@ const createNewGameHandler = async (socket, data, next) => {
     await User.findByIdAndUpdate(wallet, { activeGameId: newGame._id });
 
     // 3) Send the game to the server store
-    serverStore.addNewGame(gameId, isPublic, socket, alias, data.obj);
+    serverStore.addNewGame(gameId, isPublic, socket, alias, data.obj , huddleId);
 };
 
 module.exports = createNewGameHandler;
